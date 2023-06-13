@@ -7,6 +7,11 @@ import { validateEmail } from '../utils/helpers';
 export default function Login() {
   const [email, setEmail] = useState('');
 
+  const sendLink =() =>{
+    sendMagicLink(email, null); 
+    toast.success(`Please login using the link sent to ${email}`);
+    console.log(window.location.origin)
+  }
   return (
     <>
       <div className="flex flex-col h-full gap-y-10 w-full bg-white sm:flex-row justify-center items-center">
@@ -22,8 +27,8 @@ export default function Login() {
               if (!email) {
                 return toast.error('Please fill all the fields');
               }
-              validateEmail(email?.split('@')[1]) ? toast.error('Please Enter work email') : sendMagicLink(email, null); toast.success(`Please login using the link sent to ${email}`);
-//               sendMagicLink(email, null);
+              validateEmail(email?.split('@')[1]) ? toast.error('Please Enter work email') : sendLink();
+              // sendMagicLink(email, null);
               
             }}
           >
