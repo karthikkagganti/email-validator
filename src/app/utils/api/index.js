@@ -5,7 +5,7 @@ export async function sendMagicLink(email, setData) {
         const response = await supabseClient.auth.signInWithOtp({
             email: email,
             options: {
-              emailRedirectTo: `${location.origin}/auth/callback`,
+              emailRedirectTo: `${window.location.origin}/auth/callback`,
             },
           }).then((res) => console.log(res?.status))
         if(response?.status == 200) {
