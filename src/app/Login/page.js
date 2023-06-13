@@ -26,8 +26,8 @@ export default function Login() {
               if (!email) {
                 return toast.error('Please fill all the fields');
               }
-//               validateEmail(email?.split('@')[1]) ? toast.error('Please Enter work email') : sendLink();
-              sendMagicLink(email, null);
+              validateEmail(email?.split('@')[1]) ? toast.error('Please Enter work email') : sendLink();
+//               sendMagicLink(email, null);
               
             }}
           >
