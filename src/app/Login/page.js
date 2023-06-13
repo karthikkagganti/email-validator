@@ -10,7 +10,6 @@ export default function Login() {
   const sendLink =() =>{
     sendMagicLink(email, null); 
     toast.success(`Please login using the link sent to ${email}`);
-    console.log(window.location.origin)
   }
   return (
     <>
