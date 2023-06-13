@@ -5,7 +5,7 @@ export async function sendMagicLink(email, setData) {
         const response = await supabseClient.auth.signInWithOtp({
             email: email,
             options: {
-              emailRedirectTo: `${window.location.origin}/auth/callback`,
+              emailRedirectTo: 'https://email-validator-rho.vercel.app/auth/callback',
             },
           }).then((res) => console.log(res?.status))
         if(response?.status == 200) {
